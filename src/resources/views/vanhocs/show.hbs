@@ -30,10 +30,10 @@
                     Văn học
                 </div>
                 <ul class="container_nav-column-item">
-                    <li><a href="#">Tiểu thuyết</a></li>
-                    <li><a href="#">Truyện Ngắn - Tản Văn</a></li>
-                    <li><a href="#">Light Novel</a></li>
-                    <li><a href="#">Ngôn Tình</a></li>
+                    <li><a href="/vanhocs/tieu-thuyet">Tiểu thuyết</a></li>
+                    <li><a href="/vanhocs/truyen-ngan-tan-van">Truyện Ngắn - Tản Văn</a></li>
+                    <li><a href="/vanhocs/light-novel">Light Novel</a></li>
+                    <li><a href="/vanhocs/ngon-tinh">Ngôn Tình</a></li>
                 </ul>
             </div>
 
@@ -77,12 +77,12 @@
             <div class="container_nav-body-list">
                 {{#each vanhocs}}
                 <div class="container_nav-body-item">
-                    <a href="/{{this._id}}" class="container_nav-body-img">
+                    <a href="{{this._id}}/product" class="container_nav-body-img">
                         <img src="{{this.image}}" alt="">
                         <div class="container_nav-body-img-text-center">{{this.discount}}%</div>
                     </a>
                     <div class="container_nav-body-text">
-                        <a href="#" class="container_nav-body-name">
+                        <a href="{{this._id}}/product" class="container_nav-body-name">
                             {{this.name}}
                         </a>
                         <div class="container_nav-body-price">

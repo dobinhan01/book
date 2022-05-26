@@ -7,7 +7,6 @@ class SachmoiController {
     show(req, res, next) {
         Sachmoi.find({})
             .then(sachmois => {
-                console.log(sachmois);
                 res.render('home', { sachmois: mutipleMongooseToOject(sachmois) });
             })
             .catch(next);

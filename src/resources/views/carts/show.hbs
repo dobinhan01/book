@@ -1,0 +1,223 @@
+<div id="pay">
+    <div class="pay_nav container">
+
+        <div class="pay_header">GIỎ HÀNG</div>
+        <div class="pay_content">
+            <div class="pay_content-left">
+                <div class="pay_content-left-header">
+                    <div class="pay_content-left-header-name">
+
+                        <div class="pay_content-left-header-number">0</div>
+                        <span>(sản phẩm)</span>
+                    </div>
+
+                    <div class="pay_content-left-header-amount">
+                        Số lượng
+                    </div>
+                    
+                    <div class="pay_content-left-header-price">
+                        Thành tiền
+                    </div>
+                </div>
+
+                <div class="pay_content-left-content">
+                    <div class="pay_content-left-content-list">
+                        
+                        <div class="container_nav-border"></div>
+                        
+                        
+                    
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="pay_content-right">
+                <div class="pay_content-right-content">
+                    <div class="pay_content-right-content-header">
+                        <span>
+                            Thành tiền
+                        </span>
+                        
+                        <div style="display: flex;">
+                            <span class="sum-price" style="color: rgb(213, 28, 36);">125000
+                            </span>
+                            <sub>đ</sub>
+                        </div>
+                            
+
+                    </div>
+                    <a href="#" class="pay_content-right-content-btn">
+                        THANH TOÁN
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    const wrapItem = $('.pay_content-left-content-list')
+    let ArrayItem = [];
+    let test1 = '';
+
+    const Sl = $('.pay_content-left-header-number')
+   
+  
+    const sumprice = $('.sum-price')
+
+
+
+    if(cart != null){
+        templateShowItem();
+    }
+
+    for(let i = 0; i < ArrayItem.length; i++){
+        test1 = test1 +  ArrayItem[i] + '\n';
+    }
+    wrapItem.innerHTML = test1;
+
+    deleteCart()
+
+    sum()
+
+    btn()
+    function btn(params) {
+        
+        const item = $$('.pay_content-left-content-item')
+        const btnSum =$$('.btn-sum')
+        const btnSub =$$('.btn-sub')
+        const SlSp = $$('.SLsp') 
+        for(var i=0; i< item.length;i++){
+            btnSum[i].addEventListener("click",function(event){ 
+                var a = event.target.parentElement.parentElement
+                
+                var Sl = new Number(a.querySelector('.SLsp').innerHTML)
+                Sl++
+                a.querySelector('.SLsp').innerHTML = Sl
+                var price = new Number(a.querySelector('.pay_content-left-content-info-price').innerHTML)
+                a.querySelector('.pay_content-left-content-price').innerHTML = price *Sl
+                sum()
+        
+            })
+        
+            btnSub[i].addEventListener("click",function(event){ 
+                var a = event.target.parentElement.parentElement
+                
+                var Sl = new Number(a.querySelector('.SLsp').innerHTML)
+                var price = new Number(a.querySelector('.pay_content-left-content-info-price').innerHTML)
+                console.log(price)
+                Sl--
+                if(a.querySelector('.SLsp').innerHTML==1)
+                return
+                a.querySelector('.pay_content-left-content-price').innerHTML = price *Sl
+        
+                a.querySelector('.SLsp').innerHTML = Sl
+                sum()
+        
+            })
+        
+        }
+    }
+
+
+
+    function deleteCart(){
+        const item = $$('.pay_content-left-content-item')
+        for(var i=0; i< item.length;i++){
+            var trash = document.querySelectorAll('.pay_content-left-content-icon i')
+            trash[i].addEventListener("click",function(event){
+                const idTrash = document.querySelectorAll('.pay_content-left-content-icon')
+                console.log(idTrash)
+
+                for(let i=0; i<cart.length; i++){
+                    //if(cart[i].id==)
+                    //console.log(cart[i].id)
+                }
+                var cartDelete = event.target
+                var cartitem = cartDelete.parentElement.parentElement
+                cartitem.remove()
+                sum()
+            })
+        }
+        
+    }
+
+
+    function sum() {
+        const item = $$('.pay_content-left-content-item')
+        var sum = 0
+        const Price = $$('.pay_content-left-content-price')
+
+        for(var i=0; i< item.length;i++){
+            var a = new Number(Price[i].innerHTML)
+
+            sum = sum + a
+        }
+        sumprice.innerHTML = sum
+        Sl.innerHTML = item.length
+        
+    }
+    Sl.innerHTML = item.length
+
+    function templateShowItem(){
+        for(let i = 0; i < cart.length; i++){
+        const test = `
+                    <div class="container_nav-border"></div>
+                    <div class="pay_content-left-content-item">
+                            <div class="pay_content-left-content-item-img">
+                                <img src="${cart[i].image}" alt="">
+                            </div>
+
+                            <div class="pay_content-left-content-item-info">
+                                <div class="pay_content-left-content-info-name">
+                                    ${cart[i].name}
+                                </div>
+                                
+                                <div style="display: flex;">
+
+                                    <div class="pay_content-left-content-info-price">
+                                        ${cart[i].price}
+                                    </div>
+                                    <sub class="sub-pay">đ</sub> 
+                                </div>
+                            </div>
+
+                            <div class="pay_content-left-content-btn">
+                                    <a  class="btn-sub">-</a>
+                                    <span class="SLsp">${cart[i].quantity}</span>
+                                    <a  class="btn-sum">+</a>
+                            </div>
+                            
+                            <div class="pay-div" style="display: flex;">
+                                <div class="pay_content-left-content-price">
+                                    ${cart[i].price*cart[i].quantity}
+                                </div>
+                                <sub class="sub-pay">đ</sub>
+
+                            </div>
+                            
+                            <div class="pay_content-left-content-icon" data-trash="${cart[i].id}">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+
+                        </div>
+                        `;
+            ArrayItem.push(test);
+        }
+    }
+
+    function toMoney(money){
+        const numberFormat = new Intl.NumberFormat('vi-VN',{
+            style: 'currency',
+            currency: 'VND'
+        });
+        return numberFormat.format(money);
+    }
+
+
+</script>

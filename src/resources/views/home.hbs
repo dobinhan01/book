@@ -39,21 +39,24 @@
 <div id="main-content">
     <div class="main-content_wrapper">
         <div class="main-content_wrapper-header">
-            SÁCH MỚI
+            VĂN HỌC
         </div>
         <div class="main-content_wrapper-list">
-            {{#each sachmois}}
+            {{#each vanhocs}}
             <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
+                <a href="/vanhocs/{{this._id}}/product" class="main-content_wrapper-img">
                     <img src="{{this.image}}" alt="">
                 </a>
                 <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
+                    <a href="/vanhocs/{{this._id}}/product" class="main-content_wrapper-name">
                         {{this.name}}
                     </a>
                     <div class="main-content_wrapper-price">
                         <div class="main-content_wrapper-price-new">
-                            {{this.price}}
+                            {{this.priceNew}}đ
+                        </div>
+                        <div class="main-content_wrapper-price-old">
+                            {{this.priceOld}}đ
                         </div>
                     </div>
                 </div>
@@ -61,112 +64,7 @@
             {{/each}}
         </div>
         <div class="main-content_wrapper-grid">
-            <a href="">Xem thêm >></a>
-        </div>
-    </div>
-    <div class="main-content_wrapper">
-        <div class="main-content_wrapper-header">
-            SÁCH BÁN CHẠY
-        </div>
-        <div class="main-content_wrapper-list">
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-<div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-content_wrapper-grid">
-            <a href="">Xem thêm >></a>
+            <a href="/vanhocs/tieu-thuyet">Xem thêm >></a>
         </div>
     </div>
     <div class="main-content-banner">
@@ -176,107 +74,32 @@ Lam hỏa diệt quỷ - Tập 25
     </div>
     <div class="main-content_wrapper">
         <div class="main-content_wrapper-header">
-            COMBO
+            SÁCH THIẾU NHI
         </div>
         <div class="main-content_wrapper-list">
+            {{#each sachthieunhis}}
             <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
+                <a href="/sachthieunhis/{{this._id}}/product" class="main-content_wrapper-img">
+                    <img src="{{this.image}}" alt="">
                 </a>
                 <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-<div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
+                    <a href="/sachthieunhis/{{this._id}}/product" class="main-content_wrapper-name">
+                        {{this.name}}
                     </a>
                     <div class="main-content_wrapper-price">
                         <div class="main-content_wrapper-price-new">
-                            22,500đ
+                            {{this.priceNew}}đ
                         </div>
                         <div class="main-content_wrapper-price-old">
-                            25,000đ
+                            {{this.priceOld}}đ
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-<div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
         <div class="main-content_wrapper-grid">
-            <a href="">Xem thêm >></a>
+            <a href="/sachthieunhis/manga-comic">Xem thêm >></a>
         </div>
     </div>
     <div class="main-content-banner">
@@ -286,107 +109,32 @@ Lam hỏa diệt quỷ - Tập 25
     </div>
     <div class="main-content_wrapper">
         <div class="main-content_wrapper-header">
-            MANGA - COMIC
+            SÁCH KINH TẾ
         </div>
         <div class="main-content_wrapper-list">
+            {{#each sachkinhtes}}
             <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
+                <a href="/sachkinhtes/{{this._id}}/product" class="main-content_wrapper-img">
+                    <img src="{{this.image}}" alt="">
                 </a>
                 <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-Lam hỏa diệt quỷ - Tập 25
+                    <a href="/sachkinhtes/{{this._id}}/product" class="main-content_wrapper-name">
+                        {{this.name}}
                     </a>
                     <div class="main-content_wrapper-price">
                         <div class="main-content_wrapper-price-new">
-                            22,500đ
+                            {{this.priceNew}}đ
                         </div>
                         <div class="main-content_wrapper-price-old">
-                            25,000đ
+                            {{this.priceOld}}đ
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-<img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
         <div class="main-content_wrapper-grid">
-            <a href="">Xem thêm >></a>
+            <a href="/sachkinhtes/nhan-vat-lich-su">Xem thêm >></a>
         </div>
     </div>
     <div class="main-content-banner">
@@ -396,217 +144,32 @@ Lam hỏa diệt quỷ - Tập 25
     </div>
     <div class="main-content_wrapper">
         <div class="main-content_wrapper-header">
-            DORAEMON
+            SÁCH NGOẠI NGỮ
         </div>
         <div class="main-content_wrapper-list">
+            {{#each sachngoaingus}}
             <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-<div class="main-content_wrapper-img-text-center">-10%</div>
+                <a href="/sachngoaingus/{{this._id}}/product" class="main-content_wrapper-img">
+                    <img src="{{this.image}}" alt="">
                 </a>
                 <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
+                    <a href="/sachngoaingus/{{this._id}}/product" class="main-content_wrapper-name">
+                        {{this.name}}
                     </a>
                     <div class="main-content_wrapper-price">
                         <div class="main-content_wrapper-price-new">
-                            22,500đ
+                            {{this.priceNew}}đ
                         </div>
                         <div class="main-content_wrapper-price-old">
-                            25,000đ
+                            {{this.priceOld}}đ
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-</div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
         <div class="main-content_wrapper-grid">
-            <a href="">Xem thêm >></a>
-        </div>
-    </div>
-    <div class="main-content-banner">
-        <a href="">
-            <img src="https://theme.hstatic.net/200000343865/1000796725/14/banner_home_pro_8.jpg?v=219" alt="">
-        </a>
-    </div>
-    <div class="main-content_wrapper">
-        <div class="main-content_wrapper-header">
-            SHOP NOW
-        </div>
-        <div class="main-content_wrapper-list">
-            <div class="main-content_wrapper-item">
-<a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-<div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-content_wrapper-item">
-                <a href="" class="main-content_wrapper-img">
-                    <img src="https://product.hstatic.net/200000343865/product/25_f59df358beeb42328f36ccf6fca1557e_large.jpg" alt="">
-                    <div class="main-content_wrapper-img-text-center">-10%</div>
-                </a>
-                <div class="main-content_wrapper-text">
-                    <a href="#" class="main-content_wrapper-name">
-                        Lam hỏa diệt quỷ - Tập 25
-                    </a>
-                    <div class="main-content_wrapper-price">
-                        <div class="main-content_wrapper-price-new">
-                            22,500đ
-                        </div>
-                        <div class="main-content_wrapper-price-old">
-                            25,000đ
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-content_wrapper-grid">
-            <a href="">Xem thêm >></a>
+            <a href="/sachngoaingus/tieng-anh">Xem thêm >></a>
         </div>
     </div>
 </div>

@@ -1,0 +1,155 @@
+<div id="container">
+    <div class="container_header container">
+        <ul class="container_header-list">
+            <li>
+                <a href="#">Trang chủ</a>
+                <span> > </span>
+            </li>
+            <li>
+                <a href="#">Danh mục sản phẩm</a>
+                <span> > </span>
+            </li>
+            <li>
+                <a href="#">Văn học</a>
+                <span> > </span>
+            </li>
+            <li>
+                <a href="#">{{vanhoc.category}}</a>
+                <span></span>
+            </li>
+        </ul>
+
+        <div class="container_product">
+            <div class="container_product-left">
+                <div class="container_product-left-img">
+                    <img src="{{vanhoc.image}}" alt="">
+                </div>
+                <a href="/carts" class="container_product-left-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="container_product-left-btn-text">Thêm vào giỏ hàng</div>
+                </a>
+            </div>
+
+            <div class="container_product-right">
+                <div class="container_product-right-header">{{vanhoc.name}}</div>
+                <div class="container_product-right-info">
+                    <div class="container_product-right-info-list">
+                        <div class="container_product-right-info-item">
+                            <div>Nhà cung cấp:</div>
+                            <span>{{vanhoc.ncc}}</span>
+                        </div>
+                        <div class="container_product-right-info-item">
+                            <div>Tác giả:</div>
+                            <span>{{vanhoc.author}}</span>
+                        </div>
+                    </div>
+                    <div class="container_product-right-info-list">
+                        <div class="container_product-right-info-item">
+                            <div>Nhà xuất bản:</div>
+                            <span>{{vanhoc.nxb}}</span>
+                        </div>
+                        <div class="container_product-right-info-item">
+                            <div>Hình thức bìa:</div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="container_product-right-price">
+                    <span class="container_product-right-price-span">{{vanhoc.priceNew}}</span><sub>đ</sub>
+                </div>
+                <div class="container_product-right-quantum">
+                    <div class="container_product-right-quantum-text">
+                        Số lượng:
+                    </div>
+                    <div class="container_product-right-quantum-btn">
+                        <a href="#" class="btn-sub">-</a>
+                        <span class="SLsp">1</span>
+                        <a href="#" class="btn-sum">+</a>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+
+        <div class="container_info">
+            <div class="container_info-header">
+                Thông tin sản phẩm
+            </div>
+            <div class="container_nav-border"></div>
+            <div class="container_info-text">
+                {{vanhoc.desc}}
+            </div>
+            <div class="container_info-text-id" style="display: none;">{{vanhoc._id}}</div>
+        </div>
+    </div>
+
+</div>
+<script>
+    const btnThem = document.querySelector('.container_product-left-btn')
+    const btnSub = document.querySelector('.btn-sub')
+    const btnSum = document.querySelector('.btn-sum')
+    const SLSP = document.querySelector('.SLsp')
+
+    const valueIdProduct = document.querySelector('.container_info-text-id').textContent
+    const valueName = document.querySelector('.container_product-right-header').textContent
+    const valueImage = document.querySelector('.container_product-left-img img').attributes.src.value
+    const tempValue = Number(document.querySelector('.SLsp').textContent)
+    const valuePrice = Number(document.querySelector('.container_product-right-price-span').textContent)
+
+        
+    btnSubb()
+    function btnSubb(){
+        btnSub.addEventListener("click",function(event){
+            if(SLSP.innerHTML == 1)
+            return
+            var Sl = SLSP.innerHTML
+            Sl--
+            SLSP.innerHTML = Sl
+        })
+    }
+    btnSumm()
+    function btnSumm(){
+        btnSum.addEventListener("click",function(event){
+            var Sl = SLSP.innerHTML
+            Sl++
+            SLSP.innerHTML = Sl
+        })
+    }
+
+    btnThem.addEventListener("click",function(event){
+        addProductLocal()
+        })
+
+    function addProductLocal(){
+        const cart = JSON.parse(localStorage.getItem("cart"));
+        const tempProduct = {
+            id: valueIdProduct,
+            name: valueName,
+            image: valueImage,
+            quantity: tempValue,
+            price: valuePrice,
+        };
+        const addItemInCart = !cart ? [tempProduct] : tempProduct;
+        if(cart == null){
+            localStorage.setItem("cart", JSON.stringify(addItemInCart));
+            countItemCart[0].innerHTML = 1;
+        }else{
+            for(let i = 0; i < cart.length; i++){
+                if(cart[i].id == addItemInCart.id){
+                    cart[i].quantity += tempValue;
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    break;
+                }else if((cart[i].id != addItemInCart.id) && (i == cart.length - 1)){
+                    cart.push(addItemInCart);
+                    console.log(cart);
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    break;
+                }
+            } 
+            countItemCart[0].innerHTML = cart.length;   
+
+        }
+    }
+
+</script>
